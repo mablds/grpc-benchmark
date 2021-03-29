@@ -1,10 +1,15 @@
 syntax = "proto3";
 
-service NoteService {
+service TesteService {
+   rpc GetOrders (Empty) returns (Orders) {}
    rpc List (Empty) returns (NoteList) {}
 }
 
 message Empty {}
+
+message Orders {
+   string ordersJson = 1;
+}
 
 message Note {
    string id = 1;

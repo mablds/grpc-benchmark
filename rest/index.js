@@ -6,8 +6,14 @@ const notes = [
     { id: '2', title: 'Note 2', content: 'Content 2' }
 ]
 
+const orders = require('../orders.json')
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/orders', (_, res) => {
+    res.json(orders)
+})
 
 app.use('/', (req, res) => {
     res.json(notes)
