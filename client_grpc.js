@@ -11,7 +11,7 @@ const client = new pckg.TesteService('localhost:50051',
 
 client.GetOrders(null, (error, response) => {
     if (!error) {
-        console.log(response.ordersJson)
+        console.log(JSON.parse(response.ordersJson))
         console.timeEnd('request')
     } else {
         console.error(error)
